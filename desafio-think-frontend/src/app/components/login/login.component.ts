@@ -25,12 +25,14 @@ export class LoginComponent implements OnInit {
   private my_email = '';
   public getEmail(email: string) {
     this.my_email = email
+    console.log(this.my_email)
     return this.my_email
   }
 
   private my_password = '';
   public getPassword(password: string) {
     this.my_password = password
+    console.log(this.my_password)
     return this.my_password
   }
 
@@ -42,13 +44,16 @@ export class LoginComponent implements OnInit {
       email: this.my_email,
       password: this.my_password,
     }
-    await this.http.post('https://reqres.in/api/login', body, { headers: header }).subscribe((data) => {
-      this.users = data;
-      if (this.users === "QpwL5tke4Pnpja7X4") {
-        this.router.navigateByUrl('/paint');
-      } else {
-        alert('wrong pass')
-      }
-    });
+    if(this.my_email && this.my_password) {
+      this.http.post('https://reqres.in/api/login', body, { headers: header }).subscribe((data) => {
+        this.users = data;
+        console.log(this.users)
+        if(this.users.token === 'QpwL5tke4Pnpja7X4' && this.my_email === "eve.holt@reqres.in" && this.my_password === "cityslicka") {
+          this.router.navigateByUrl('/paint');
+        } else {
+          console.log('aaaaaaaaaa')
+        }
+      });
+    }
   }
 }
