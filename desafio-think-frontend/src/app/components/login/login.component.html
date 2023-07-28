@@ -18,14 +18,14 @@
             <div class="my-6">
                 <h1 class="text-xl font-bold text-center">Login</h1>
                 <label class="block text-md mb-1 ml-6 md:ml-4" for="emailField">Email:</label>
-                <input class="w-10/12 h-8 p-2 ml-6 rounded-md text-lg bg-gray-800 border border-gray-600 focus:outline-none focus:bg-neutral-focus focus:border-yellow-500 md:ml-4 2xl:w-11/12 2xl:h-12" id="emailField" type="email">
+                <input #email class="w-10/12 h-8 p-2 ml-6 rounded-md text-lg bg-gray-800 border border-gray-600 focus:outline-none focus:bg-neutral-focus focus:border-yellow-500 md:ml-4 2xl:w-11/12 2xl:h-12" id="emailField" type="email">
             </div>
             <div my-6>
                 <label class="block text-md mb-2 ml-6 md:ml-4" for="PasswordField">Password:</label>
-                <input class="w-10/12 h-8 p-1 ml-6 rounded-md text-lg bg-gray-800 border border-gray-600 focus:outline-none focus:bg-neutral-focus focus:border-yellow-500 md:ml-4 2xl:w-11/12 2xl:h-12 " id="PasswordField" type="password">
+                <input #password class="w-10/12 h-8 p-1 ml-6 rounded-md text-lg bg-gray-800 border border-gray-600 focus:outline-none focus:bg-neutral-focus focus:border-yellow-500 md:ml-4 2xl:w-11/12 2xl:h-12 " id="PasswordField" type="password">
             </div>
             <div class="my-6">
-                <button class="w-10/12 p-1 ml-6 rounded-md text-md font-bold border-none text-white focus:ring-0 bg-yellow-500 md:ml-4 2xl:w-11/12 2xl:h-12">Sign in</button>
+                <button (click)="login()" class="w-10/12 p-1 ml-6 rounded-md text-md font-bold border-none text-white focus:ring-0 bg-yellow-500  hover:bg-blue-600 md:ml-4 2xl:w-11/12 2xl:h-12">Sign in</button>
             </div>
             <div class="text-center text-gray-400 text-sm ">
                 Not a member? <a class="text-yellow-500 font-bold hover:text-blue-600" href="">Sign up here!</a>
