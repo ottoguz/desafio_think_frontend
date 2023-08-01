@@ -20,25 +20,17 @@ export class LoginComponent implements OnInit {
     } catch {
       throw new Error('Method not implemented.');
     }
-
-    try {
-      this.logout();
-    } catch {
-      throw new Error('Method not implemented.');
-    }
   }
 
   private my_email = '';
   public getEmail(email: string) {
     this.my_email = email
-    console.log(this.my_email)
     return this.my_email
   }
 
   private my_password = '';
   public getPassword(password: string) {
     this.my_password = password
-    console.log(this.my_password)
     return this.my_password
   }
 
@@ -54,11 +46,10 @@ export class LoginComponent implements OnInit {
     if(this.my_email && this.my_password) {
       this.http.post('https://reqres.in/api/login', body, { headers: header }).subscribe((data) => {
         this.user = data;
-
         localStorage.setItem('token', JSON.stringify(this.user));
         let token: any = localStorage.getItem('token');
         let json = this.user = JSON.parse(token);
-        if(json.token === "QpwL5tke4Pnpja7X4") {
+        if(json.token === "QpwL5tke4Pnpja7X4" && this.my_email === "eve.holt@reqres.in") {
           this.router.navigateByUrl('/paint');
         } else {
           console.log('aaaaaaaaaa')
@@ -66,11 +57,4 @@ export class LoginComponent implements OnInit {
       });
     }
   }
-
-  
-  public logout() {
-    let token = localStorage.removeItem('token');
-    this.router.navigateByUrl('/login');
-    console.log('token: ' + token)
-  } 
 }

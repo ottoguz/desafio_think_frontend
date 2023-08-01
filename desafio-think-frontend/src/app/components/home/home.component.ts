@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 //declare function removeColor(): void;
 @Component({
@@ -7,7 +8,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  //constructor() {
-    //removeColor();
-  //}
+  constructor(
+    private router: Router,
+    ) {}
+
+  show:boolean = true;
+  public logout() {
+    let token = localStorage.removeItem('token');
+    this.router.navigateByUrl('/login');
+  } 
 }

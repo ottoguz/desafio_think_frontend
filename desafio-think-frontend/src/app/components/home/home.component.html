@@ -1,14 +1,31 @@
 <link rel="stylesheet" href="home.component.css">
+<header>
+  <nav class="h-12">
+    <div class="h-12 bg-gradient-to-r from-gray-900 to-gray-700 navbar bg-base-100">
+      <div class="ml-18 flex-1">
+        <a class="btn btn-ghost normal-case text-md mb-4 md:mb-0"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#1277fd}</style><path d="M0 64C0 28.7 28.7 0 64 0H352c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V64zM160 352c0-17.7 14.3-32 32-32V304c0-44.2 35.8-80 80-80H416c17.7 0 32-14.3 32-32V160 69.5c37.3 13.2 64 48.7 64 90.5v32c0 53-43 96-96 96H272c-8.8 0-16 7.2-16 16v16c17.7 0 32 14.3 32 32V480c0 17.7-14.3 32-32 32H192c-17.7 0-32-14.3-32-32V352z"/></svg>Ottopaint</a>
+      </div>
+      <div *ngIf="show">
+        <div class="flex">
+          <h1 class="hidden flex-1 m-auto md:block font-semibold text-white">Log out</h1>
+          <button (click)="logout()" class="btn btn-square btn-ghost mb-4 md:mb-0">
+            <a href=""><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#d9be12}</style><path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"/></svg></a>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
 <div class="h-[100vh] w-full bg-blue-400 md:mt-4">
  <div>
     <div class="flex justify-center">
-        <div class="card w-[90VW] h-[580px] mt-8 pt-2 bg-black rounded-none shadow-2xl shadow-black md:mt-3 lg:h-[550px] lg:flex-row-reverse xl:w-[70vw] 2xl:h-[650px] 2xl:w-[61vw] 2xl:flex-row-reverse">
+        <div class="card w-[90VW] h-[580px] mt-8 pt-2 bg-black rounded-none shadow-2xl shadow-black md:mt-3 lg:h-[550px] lg:flex-row-reverse xl:w-[70vw] 2xl:h-[650px] 2xl:w-[55vw] 2xl:flex-row-reverse">
             <figure class="md:mt-2">
-              <img id="paint" class="p-0 w-[85vw] h-fit lg:h-[520px] lg:w-[460px] lg:mr-3 lg:mb-4 2xl:h-[620px] 2xl:w-[500px] 2xl:mr-4 2xl:mb-4" id="paint" src="../assets/images/livingroom.png" alt="Shoes" />
+              <img id="paint" class="p-0 w-[85vw] h-fit lg:h-[520px] lg:w-[400px] lg:mr-3 lg:mb-4 2xl:h-[620px] 2xl:w-[500px] 2xl:mr-4 2xl:mb-4" id="paint" src="../assets/images/livingroom.png" alt="Shoes" />
             </figure>
             <div class="card-body p-2 pl-4">
               <h2 class="card-title">Choose a color:</h2>
-              <div class="card-actions flex-row justify-center pb-3 lg:flex-col lg:space-y-4">
+              <div class="card-actions flex-row justify-center pb-3 lg:flex-col lg:space-y-4 2xl:pr-4">
                 <button onclick="changePaintBlue400()" class="paint-button btn btn-primary bg-blue-400 border border-gray-600 focus:outline-none focus:bg-neutral-focus focus:border-yellow-500 lg:w-96"></button>
                 <button onclick="changePaintRed950()" class="paint-button btn btn-primary bg-red-950 border-gray-600 focus:outline-none focus:bg-neutral-focus focus:border-yellow-500 lg:w-96"></button>
                 <button onclick="changePaintYellow600()" class="paint-button btn btn-primary bg-yellow-600 border-gray-600 focus:outline-none focus:bg-neutral-focus focus:border-yellow-500 lg:w-96"></button>
