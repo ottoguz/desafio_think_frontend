@@ -8,7 +8,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-  public users: any;
   constructor(
     private http: HttpClient,
     private router: Router, 
@@ -22,20 +21,23 @@ export class SignupComponent implements OnInit {
     }
   }
   
+  //Método: Captura a entrada de teclado no campo email da tela de registro
   private my_email = '';
   public getEmail(email: string) {
     this.my_email = email
-    console.log(this.my_email)
     return this.my_email
   }
 
+  //Método: Captura a entrada de teclado no campo senha da tela de registro
   private my_password = '';
   public getPassword(password: string) {
     this.my_password = password
-    console.log(this.my_password)
     return this.my_password
   }
 
+  //Método: comunica com a fake API reqres para capturar o token e realizar o registro
+  //Utilizar email: "eve.holt@reqres.in" e senha: "pistol" para testar
+  public user: any;
   public async signup(): Promise<void> {
     const header = new HttpHeaders({
       contentType: 'application/json'
@@ -46,13 +48,13 @@ export class SignupComponent implements OnInit {
     }
     if(this.my_email && this.my_password) {
       this.http.post('https://reqres.in/api/register', body, { headers: header }).subscribe((data) => {
-        this.users = data;
-        console.log(this.users)
-        if(this.users.token === 'QpwL5tke4Pnpja7X4' && this.my_email === "eve.holt@reqres.in" && this.my_password === "pistol") {
+        this.user = data;
+        localStorage.setItem('token', JSON.stringify(this.user));
+        let token: any = localStorage.getItem('token');
+        let json = this.user = JSON.parse(token);
+        if(json.token === "QpwL5tke4Pnpja7X4" && this.my_email === "eve.holt@reqres.in") {
           this.router.navigateByUrl('/login');
-        } else {
-          console.log('aaaaaaaaaa')
-        }
+        } 
       });
     }
   }

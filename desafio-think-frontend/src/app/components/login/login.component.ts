@@ -1,5 +1,4 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Token } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -22,18 +21,22 @@ export class LoginComponent implements OnInit {
     }
   }
 
+  //Método: Captura a entrada de teclado no campo email da tela de login
   private my_email = '';
   public getEmail(email: string) {
     this.my_email = email
     return this.my_email
   }
 
+  //Método: Captura a entrada de teclado no campo senha da tela de login
   private my_password = '';
   public getPassword(password: string) {
     this.my_password = password
     return this.my_password
   }
 
+  //Método: comunica com a fake API reqres para capturar o token e realizar login
+  //Utilizar email: "eve.holt@reqres.in" e senha: "cityslicka" para testar
   public user: any;
   public async login(): Promise<void> {
     const header = new HttpHeaders({
@@ -51,9 +54,7 @@ export class LoginComponent implements OnInit {
         let json = this.user = JSON.parse(token);
         if(json.token === "QpwL5tke4Pnpja7X4" && this.my_email === "eve.holt@reqres.in") {
           this.router.navigateByUrl('/paint');
-        } else {
-          console.log('aaaaaaaaaa')
-        }
+        } 
       });
     }
   }

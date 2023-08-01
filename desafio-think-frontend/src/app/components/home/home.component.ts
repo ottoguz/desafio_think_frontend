@@ -12,6 +12,7 @@ export class HomeComponent {
     private router: Router,
     ) {}
 
+  //Método: apaga o token da sessão, faz o log out e retorna à tela de login
   show:boolean = true;
   public logout() {
     let token = localStorage.removeItem('token');

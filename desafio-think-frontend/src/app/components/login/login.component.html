@@ -1,3 +1,4 @@
+<!--HEADER PARA ACOMPANHAR O LAYOUT DA PÁGINA-->
 <header>
     <nav class="h-12">
       <div class="h-12 bg-gradient-to-r from-gray-900 to-gray-700 navbar bg-base-100">
@@ -7,14 +8,30 @@
       </div>
     </nav>
 </header>
+
+<!--AREA PRINCIPAL DA PÁGINA-->
 <div style="background-image: url('../assets/images/top-view-paint-can.jpg');" 
      class="h-[100vh] w-full bg-contain bg-no-repeat md:mt-4 md:bg-cover">
-  <div class="flex lg:container lg:mx-auto lg:space-x-5">
+    <div class="flex lg:container lg:mx-auto lg:space-x-5">
         <div class="flex-col">
-            <div style="text-shadow: 1px 1px 6px #1d1d1db5;" class="absolute top-10 p-4 text-white md:top-[75px] md:left-80 lg:ml-40 xl:ml-96 2xl:ml-[720px]">
-            <h1 class="text-4xl drop-shadow-3xl md:text-5xl lg:text-7xl xl:text-8xl">Ottopaint:</h1>
-            <h2 class="text-xl mt-2  drop-shadow-3xl lg:text-2xl lg:ml-2 xl:text-3xl">Custom Colors on Demand</h2>
-            <ul class="leading-6 text-xs mt-2 lg:text-lg lg:ml-2 xl:text-2xl">
+
+            <!--DIV CONTENDO O NOME DA EMPRESA-->
+            <div style="text-shadow: 1px 1px 6px #1d1d1db5;" 
+                 class="absolute top-10 p-4 text-white 
+                        md:top-[75px] md:left-80 
+                        lg:ml-40 
+                        xl:ml-96 
+                        2xl:ml-[720px]">
+            <h1 class="text-4xl drop-shadow-3xl 
+                       md:text-5xl 
+                       lg:text-7xl 
+                       xl:text-8xl">Ottopaint:</h1>
+            <h2 class="text-xl mt-2 drop-shadow-3xl 
+                       lg:text-2xl lg:ml-2 
+                       xl:text-3xl">Custom Colors on Demand</h2>
+            <ul class="leading-6 text-xs mt-2 lg:text-lg 
+                       lg:ml-2 
+                       xl:text-2xl">
                 <p>We offer:</p>
                 <li>- Online color picking feature</li>
                 <li>- 24/7 Customer Service</li>
@@ -22,24 +39,39 @@
             </ul>
             </div>
         </div>
-        <div class="flex-col mt-52 w-[100vw] h-[70vh] bg-gradient-to-b from-gray-800 to-blue-400 md:bg-none">
-        <div class="absolute w-[85vw] h-96 top-[275px] bg-gradient-to-r from-gray-900 to-gray-700 shadow-2xl shadow-black ml-6 md:w-4/12 md:top-[90px] lg:w-3/12 xl:w-3/12 xl:h-[500px] 2xl:w-3/12">
-            <div class="my-6">
-                <h1 class="text-xl font-bold text-center">Login</h1>
-                <label class="block text-md mb-1 ml-6 md:ml-4" for="emailField">Email:</label>
-                <input #email (keyup)="getEmail(email.value)" class="w-10/12 h-8 p-2 ml-6 rounded-md text-lg bg-gray-800 border border-gray-600 focus:outline-none focus:bg-neutral-focus focus:border-yellow-500 md:ml-4 2xl:w-11/12 2xl:h-12" id="emailField" type="email">
-            </div>
-            <div my-6>
-                <label class="block text-md mb-2 ml-6 md:ml-4" for="PasswordField">Password:</label>
-                <input #password (keyup)="getPassword(password.value)" class="w-10/12 h-8 p-1 ml-6 rounded-md text-lg bg-gray-800 border border-gray-600 focus:outline-none focus:bg-neutral-focus focus:border-yellow-500 md:ml-4 2xl:w-11/12 2xl:h-12 " id="PasswordField" type="password">
-            </div>
-            <div class="my-6">
-                <button  (click)="login()" class="w-10/12 p-1 ml-6 rounded-md text-md font-bold border-none text-white focus:ring-0 bg-yellow-500  hover:bg-blue-600 md:ml-4 2xl:w-11/12 2xl:h-12">Sign in</button>
-            </div>
-            <div class="text-center text-gray-400 text-sm">
-                Not a member? <a class="text-yellow-500 font-bold hover:text-blue-600"  routerLink="../signup" href="">Sign up here!</a>
+
+        <!--AREA DO FORMULÁRIO DE EMAIL E SENHA PARA LOGIN-->
+        <div class="flex-col mt-52 w-[100vw] h-[70vh] bg-gradient-to-b from-gray-800 to-blue-400 
+                    md:bg-none">
+            <div class="absolute w-[85vw] h-96 top-[275px] bg-gradient-to-r from-gray-900 to-gray-700 shadow-2xl shadow-black ml-6 md:w-4/12 
+                        md:top-[90px] 
+                        lg:w-3/12 
+                        xl:w-3/12 xl:h-[500px] 
+                        2xl:w-3/12">
+                <div class="my-6">
+                    <h1 class="text-xl font-bold text-center">Login</h1>
+                    <label class="block text-md mb-1 ml-6 
+                                md:ml-4" for="emailField">Email:</label>
+                    <input #email (keyup)="getEmail(email.value)" class="w-10/12 h-8 p-2 ml-6 rounded-md text-lg bg-gray-800 border border-gray-600 focus:outline-none focus:bg-neutral-focus focus:border-yellow-500 
+                                                                        md:ml-4 
+                                                                        2xl:w-11/12 2xl:h-12" id="emailField" type="email">
+                </div>
+                <div my-6>
+                    <label class="block text-md mb-2 ml-6 
+                                md:ml-4" for="PasswordField">Password:</label>
+                    <input #password (keyup)="getPassword(password.value)" class="w-10/12 h-8 p-1 ml-6 rounded-md text-lg bg-gray-800 border border-gray-600 focus:outline-none focus:bg-neutral-focus focus:border-yellow-500 
+                                                                                md:ml-4 
+                                                                                2xl:w-11/12 2xl:h-12 " id="PasswordField" type="password">
+                </div>
+                <div class="my-6">
+                    <button  (click)="login()" class="w-10/12 p-1 ml-6 rounded-md text-md font-bold border-none text-white focus:ring-0 bg-yellow-500  hover:bg-blue-600 
+                                                    md:ml-4 
+                                                    2xl:w-11/12 2xl:h-12">Sign in</button>
+                </div>
+                <div class="text-center text-gray-400 text-sm">
+                    Not a member? <a class="text-yellow-500 font-bold hover:text-blue-600"  routerLink="../signup" href="">Sign up here!</a>
+                </div>
             </div>
         </div>
     </div>
-  </div>
 </div>
