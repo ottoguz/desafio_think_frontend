@@ -1,4 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Token } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -8,7 +9,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  public users: any;
   constructor(
     private http: HttpClient,
     private router: Router,
@@ -17,6 +17,12 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     try {
       this.login();
+    } catch {
+      throw new Error('Method not implemented.');
+    }
+
+    try {
+      this.logout();
     } catch {
       throw new Error('Method not implemented.');
     }
@@ -36,6 +42,7 @@ export class LoginComponent implements OnInit {
     return this.my_password
   }
 
+  public user: any;
   public async login(): Promise<void> {
     const header = new HttpHeaders({
       contentType: 'application/json'
@@ -46,9 +53,12 @@ export class LoginComponent implements OnInit {
     }
     if(this.my_email && this.my_password) {
       this.http.post('https://reqres.in/api/login', body, { headers: header }).subscribe((data) => {
-        this.users = data;
-        console.log(this.users)
-        if(this.users.token === 'QpwL5tke4Pnpja7X4' && this.my_email === "eve.holt@reqres.in" && this.my_password === "cityslicka") {
+        this.user = data;
+
+        localStorage.setItem('token', JSON.stringify(this.user));
+        let token: any = localStorage.getItem('token');
+        let json = this.user = JSON.parse(token);
+        if(json.token === "QpwL5tke4Pnpja7X4") {
           this.router.navigateByUrl('/paint');
         } else {
           console.log('aaaaaaaaaa')
@@ -56,4 +66,11 @@ export class LoginComponent implements OnInit {
       });
     }
   }
+
+  
+  public logout() {
+    let token = localStorage.removeItem('token');
+    this.router.navigateByUrl('/login');
+    console.log('token: ' + token)
+  } 
 }
