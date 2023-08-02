@@ -23,7 +23,7 @@ import { HttpClientModule} from '@angular/common/http';
     AppRoutingModule,
     HttpClientModule,
   ],
-  providers: [/*{provide: ErrorHandler, useClass: ErrorHandlerMessage}*/],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

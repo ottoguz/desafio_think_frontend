@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-//declare function removeColor(): void;
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -13,7 +12,7 @@ export class HomeComponent {
     ) {}
 
   //Método: apaga o token da sessão, faz o log out e retorna à tela de login
-  show:boolean = true;
+  show = true;
   public logout() {
     let token = localStorage.removeItem('token');
     this.router.navigateByUrl('/login');

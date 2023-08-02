@@ -1,27 +1,19 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-//import { ErrorHandlerMessage } from 'src/app/error-handler';
+
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
   constructor(
     private http: HttpClient,
     private router: Router,
     //private errorHandlerMessage: ErrorHandlerMessage,
     ) {}
-
-  ngOnInit(): void {
-    try {
-      this.login();
-    } catch {
-      throw new Error('Method not implemented.');
-    }
-  }
 
   //Método: Captura a entrada de teclado no campo email da tela de login
   private my_email = '';
