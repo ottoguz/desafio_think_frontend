@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+//import { ErrorHandlerMessage } from 'src/app/error-handler';
 
 @Component({
   selector: 'app-login',
@@ -11,6 +12,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private http: HttpClient,
     private router: Router,
+    //private errorHandlerMessage: ErrorHandlerMessage,
     ) {}
 
   ngOnInit(): void {
@@ -46,6 +48,21 @@ export class LoginComponent implements OnInit {
       email: this.my_email,
       password: this.my_password,
     }
+    console.log('email: ' + this.my_email)
+    console.log('pass: ' + this.my_password)
+    /*
+    if(this.my_email !== '' && this.my_password !== '') {
+      try {
+        this.http.post('https://reqres.in/api/login', body, { headers: header }).subscribe((data) => {
+          localStorage.setItem('token', JSON.stringify(data));
+        })
+      } catch (error) {
+        //this.errorHandlerMessage.handleError(error);
+        alert('eita')
+      }
+    }*/
+    
+    
     if(this.my_email && this.my_password) {
       this.http.post('https://reqres.in/api/login', body, { headers: header }).subscribe((data) => {
         this.user = data;

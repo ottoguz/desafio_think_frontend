@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { ErrorHandler, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -8,6 +8,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { HomeComponent } from './components/home/home.component';
 import { HttpClientModule} from '@angular/common/http';
+//import { ErrorHandlerMessage } from './error-handler';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { HttpClientModule} from '@angular/common/http';
     AppRoutingModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [/*{provide: ErrorHandler, useClass: ErrorHandlerMessage}*/],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
