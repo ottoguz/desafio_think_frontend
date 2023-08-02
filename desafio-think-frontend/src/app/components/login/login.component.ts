@@ -36,35 +36,23 @@ export class LoginComponent {
     const header = new HttpHeaders({
       contentType: 'application/json'
     })
+    
     let body = {
       email: this.my_email,
       password: this.my_password,
     }
-    console.log('email: ' + this.my_email)
-    console.log('pass: ' + this.my_password)
-    /*
-    if(this.my_email !== '' && this.my_password !== '') {
-      try {
-        this.http.post('https://reqres.in/api/login', body, { headers: header }).subscribe((data) => {
-          localStorage.setItem('token', JSON.stringify(data));
-        })
-      } catch (error) {
-        //this.errorHandlerMessage.handleError(error);
-        alert('eita')
+    
+    this.http.post('https://reqres.in/api/login', body, { headers: header }).subscribe((data) => {
+      this.user = data;
+      localStorage.setItem('token', JSON.stringify(this.user));
+     
+      let token: any = localStorage.getItem('token');
+      let json = JSON.parse(token)
+      if(this.user.token === json.token) {
+        this.router.navigateByUrl('/paint');
+      } else {
+        alert('Please check your login credentials!')
       }
-    }*/
-    
-    
-    if(this.my_email && this.my_password) {
-      this.http.post('https://reqres.in/api/login', body, { headers: header }).subscribe((data) => {
-        this.user = data;
-        localStorage.setItem('token', JSON.stringify(this.user));
-        let token: any = localStorage.getItem('token');
-        let json = this.user = JSON.parse(token);
-        if(json.token === "QpwL5tke4Pnpja7X4" && this.my_email === "eve.holt@reqres.in") {
-          this.router.navigateByUrl('/paint');
-        } 
-      });
-    }
+    });
   }
 }

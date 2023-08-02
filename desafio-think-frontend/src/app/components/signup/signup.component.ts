@@ -7,19 +7,11 @@ import { Router } from '@angular/router';
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css']
 })
-export class SignupComponent implements OnInit {
+export class SignupComponent {
   constructor(
     private http: HttpClient,
     private router: Router, 
     ) {}
-
-  ngOnInit(): void {
-    try {
-      this.signup();
-    } catch {
-      throw new Error('Method not implemented.');
-    }
-  }
   
   //Método: Captura a entrada de teclado no campo email da tela de registro
   private my_email = '';
@@ -42,17 +34,19 @@ export class SignupComponent implements OnInit {
     const header = new HttpHeaders({
       contentType: 'application/json'
     })
+
     let body = {
       email: this.my_email,
       password: this.my_password,
     }
+
     if(this.my_email && this.my_password) {
       this.http.post('https://reqres.in/api/register', body, { headers: header }).subscribe((data) => {
         this.user = data;
         localStorage.setItem('token', JSON.stringify(this.user));
         let token: any = localStorage.getItem('token');
         let json = this.user = JSON.parse(token);
-        if(json.token === "QpwL5tke4Pnpja7X4" && this.my_email === "eve.holt@reqres.in") {
+        if(this.user.token === json.token) {
           this.router.navigateByUrl('/login');
         } 
       });

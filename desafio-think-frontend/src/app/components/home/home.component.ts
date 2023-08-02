@@ -12,7 +12,6 @@ export class HomeComponent {
     ) {}
 
   //Método: apaga o token da sessão, faz o log out e retorna à tela de login
-  show = true;
   public logout() {
     let token = localStorage.removeItem('token');
     this.router.navigateByUrl('/login');
