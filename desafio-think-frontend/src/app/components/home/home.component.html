@@ -18,37 +18,39 @@
 </div>
 
 <!--AREA ONDE SE ENCONTRA A TELA HOME COM AS CORES DE TINTA PARA O USUÁRIO ESCOLHER(click events)-->
-<div class="h-[100vh] w-full bg-blue-400 
-            md:mt-4">
- <div>
-    <div class="flex justify-center">
-        <div class="card w-[90VW] h-[580px] mt-8 pt-2 bg-black rounded-none shadow-2xl shadow-black 
-                    md:mt-3
-                    lg:h-[550px] lg:flex-row-reverse 
-                    xl:w-[70vw] 2xl:h-[650px] 
-                    2xl:w-[55vw] 2xl:flex-row-reverse">
-            <figure class="md:mt-2">
-              <img id="paint" class="p-0 w-[85vw] h-fit 
-                                     lg:h-[520px] lg:w-[400px] lg:mr-3 lg:mb-4 
-                                     2xl:h-[620px] 2xl:w-[500px] 2xl:mr-4 2xl:mb-4" src="../assets/images/livingroom.png" alt="Shoes" />
-            </figure>
-            <div class="card-body p-2 pl-4">
-              <h2 class="card-title">Choose a color:</h2>
-              <div class="card-actions flex-row justify-center pb-3 
-                          lg:flex-col lg:space-y-4 
-                          2xl:pr-4">
-                <button onclick="changePaintBlue400()" class="paint-button btn btn-primary bg-blue-400 border border-gray-600 focus:outline-none focus:bg-neutral-focus focus:border-yellow-500 lg:w-96"></button>
-                <button onclick="changePaintRed950()" class="paint-button btn btn-primary bg-red-950 border-gray-600 focus:outline-none focus:bg-neutral-focus focus:border-yellow-500 lg:w-96"></button>
-                <button onclick="changePaintYellow600()" class="paint-button btn btn-primary bg-yellow-600 border-gray-600 focus:outline-none focus:bg-neutral-focus focus:border-yellow-500 lg:w-96"></button>
-                <button onclick="changePaintGreen600()" class="paint-button btn btn-primary bg-green-600 border-gray-600 focus:outline-none focus:bg-neutral-focus focus:border-yellow-500 lg:w-96"></button>
-                <button onclick="changePaintAmber700()" class="paint-button btn btn-primary bg-amber-700 border-gray-600 focus:outline-none focus:bg-neutral-focus focus:border-yellow-500 lg:w-96"></button>
-                <button onclick="changePaintPurple400()" class="paint-button btn btn-primary bg-purple-400 border-gray-600 focus:outline-none focus:bg-neutral-focus focus:border-yellow-500 lg:w-96"></button>
+<section>
+  <div class="h-[100vh] w-full bg-blue-400 
+              md:mt-4">
+    <div>
+        <div class="flex justify-center">
+            <div class="card w-[90VW] h-[580px] mt-8 pt-2 bg-black rounded-none shadow-2xl shadow-black 
+                        md:mt-3
+                        lg:h-[550px] lg:flex-row-reverse 
+                        xl:w-[70vw] 2xl:h-[650px] 
+                        2xl:w-[55vw] 2xl:flex-row-reverse">
+                <figure class="md:mt-2">
+                  <img id="paint" class="p-0 w-[85vw] h-fit 
+                                        lg:h-[520px] lg:w-[400px] lg:mr-3 lg:mb-4 
+                                        2xl:h-[620px] 2xl:w-[500px] 2xl:mr-4 2xl:mb-4" src="../assets/images/livingroom.png" alt="Shoes" />
+                </figure>
+                <div class="card-body p-2 pl-4">
+                  <h2 class="card-title">Choose a color:</h2>
+                  <div class="card-actions flex-row justify-center pb-3 
+                              lg:flex-col lg:space-y-4 
+                              2xl:pr-4">
+                    <button onclick="changePaintBlue400()" class="paint-button btn btn-primary bg-blue-400 border border-gray-600 focus:outline-none focus:bg-neutral-focus focus:border-yellow-500 lg:w-96"></button>
+                    <button onclick="changePaintRed950()" class="paint-button btn btn-primary bg-red-950 border-gray-600 focus:outline-none focus:bg-neutral-focus focus:border-yellow-500 lg:w-96"></button>
+                    <button onclick="changePaintYellow600()" class="paint-button btn btn-primary bg-yellow-600 border-gray-600 focus:outline-none focus:bg-neutral-focus focus:border-yellow-500 lg:w-96"></button>
+                    <button onclick="changePaintGreen600()" class="paint-button btn btn-primary bg-green-600 border-gray-600 focus:outline-none focus:bg-neutral-focus focus:border-yellow-500 lg:w-96"></button>
+                    <button onclick="changePaintAmber700()" class="paint-button btn btn-primary bg-amber-700 border-gray-600 focus:outline-none focus:bg-neutral-focus focus:border-yellow-500 lg:w-96"></button>
+                    <button onclick="changePaintPurple400()" class="paint-button btn btn-primary bg-purple-400 border-gray-600 focus:outline-none focus:bg-neutral-focus focus:border-yellow-500 lg:w-96"></button>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
+        </div>
     </div>
- </div>
-</div>
+  </div>
+</section>
 
 <!--CHAMADA DO JS QUE MUDA A COR DAS TINTAS/PAREDE-->
 <script src="../src/app/components/home/change-paint.js" type="text/javascript"></script>
